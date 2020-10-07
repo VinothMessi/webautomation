@@ -13,9 +13,6 @@ import org.testng.annotations.BeforeClass;
 
 @SpringBootTest
 public class TestBase extends AbstractTestNGSpringContextTests {
-	
-	@Autowired
-	private BrowserFactory bFactory;
 
 	@Autowired
 	private ApplicationContext ctx;
@@ -27,7 +24,7 @@ public class TestBase extends AbstractTestNGSpringContextTests {
 
 	@BeforeClass
 	public void before_each_testClass() {
-        this.browser = this.bFactory.launch(this.browserName, this.ctx);
+        this.browser = BrowserFactory.launch(this.browserName, this.ctx);
 	}
 
 	@AfterClass

@@ -7,11 +7,7 @@ import com.google.common.collect.Maps;
 
 import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 
-@Lazy
-@Service
 public class BrowserFactory {
 
 	private static final Map<String, Function<ApplicationContext, WebDriver>> MAP = Maps.newHashMap();
@@ -39,7 +35,7 @@ public class BrowserFactory {
 		MAP.put("remoteFirefox", launchRemoteFirefox);
 	}
 
-	public WebDriver launch(String browserName, ApplicationContext ctx) {
+	public static WebDriver launch(String browserName, ApplicationContext ctx) {
 		return MAP.get(browserName).apply(ctx);
 	}
 
