@@ -6,7 +6,7 @@
 
     <classes>
 
-      <class name="com.nextgen.webautomation.testcases.VisaApp" />
+      <class name="com.nextgen.webautomation.testcases.VisaRegistrationTesting" />
 
     </classes>
 

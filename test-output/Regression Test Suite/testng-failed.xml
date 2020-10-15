@@ -3,18 +3,18 @@
 <suite name="Failed suite [Regression Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Testing Visa Application(failed)">
     <classes>
-      <class name="com.nextgen.webautomation.testcases.VisaApp">
+      <class name="com.nextgen.webautomation.testcases.VisaRegistrationTesting">
         <methods>
           <include name="springTestContextBeforeTestClass"/>
           <include name="before_each_testClass"/>
-          <include name="visaRegistration"/>
+          <include name="regression"/>
           <include name="springTestContextPrepareTestInstance"/>
           <include name="springTestContextAfterTestClass"/>
           <include name="after_each_testClass"/>
           <include name="springTestContextBeforeTestMethod"/>
           <include name="springTestContextAfterTestMethod"/>
         </methods>
-      </class> <!-- com.nextgen.webautomation.testcases.VisaApp -->
+      </class> <!-- com.nextgen.webautomation.testcases.VisaRegistrationTesting -->
     </classes>
   </test> <!-- Testing Visa Application(failed) -->
 </suite> <!-- Failed suite [Regression Test Suite] -->
