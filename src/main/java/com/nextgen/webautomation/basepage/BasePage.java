@@ -1,7 +1,6 @@
 package com.nextgen.webautomation.basepage;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
@@ -16,19 +15,15 @@ import org.openqa.selenium.support.ui.Select;
 public abstract class BasePage {
 
 	protected WebDriver myDriver;
+	private Consumer<WebDriver> maximize = d -> d.manage().window().maximize();
 
 	public BasePage(WebDriver driver) {
 		maximize.accept(driver);
-		waitImplicitlyFor.accept(30, driver);
 		myDriver = driver;
 		PageFactory.initElements(myDriver, this);
 	}
 
 	protected abstract void waitTillPageLoads();
-
-	protected Consumer<WebDriver> maximize = d -> d.manage().window().maximize();
-	protected BiConsumer<Integer, WebDriver> waitImplicitlyFor = (i, d) -> d.manage().timeouts().implicitlyWait(i,
-			TimeUnit.SECONDS);
 
 	protected BiFunction<WebDriver, By, WebElement> find = WebDriver::findElement;
 	protected BiFunction<WebDriver, By, List<WebElement>> findAll = WebDriver::findElements;
