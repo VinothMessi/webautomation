@@ -3,18 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.nextgen.webautomation.testcases.SpringJPA">
+      <class name="com.nextgen.webautomation.testcases.VisaApp">
         <methods>
           <include name="springTestContextBeforeTestClass"/>
           <include name="before_each_testClass"/>
-          <include name="testJpa3"/>
+          <include name="sanitycheck"/>
           <include name="springTestContextPrepareTestInstance"/>
           <include name="springTestContextAfterTestClass"/>
           <include name="after_each_testClass"/>
           <include name="springTestContextBeforeTestMethod"/>
           <include name="springTestContextAfterTestMethod"/>
         </methods>
-      </class> <!-- com.nextgen.webautomation.testcases.SpringJPA -->
+      </class> <!-- com.nextgen.webautomation.testcases.VisaApp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

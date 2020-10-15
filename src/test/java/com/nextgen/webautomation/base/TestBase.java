@@ -1,6 +1,9 @@
 package com.nextgen.webautomation.base;
 
 import com.nextgen.webautomation.browser.config.BrowserFactory;
+import com.nextgen.webautomation.visaapppages.VisaConfirmationPage;
+import com.nextgen.webautomation.visaapppages.VisaPage;
+import com.nextgen.webautomation.visaapppages.VisaRegistrationPage;
 
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,22 +17,30 @@ import org.testng.annotations.BeforeClass;
 @SpringBootTest
 public class TestBase extends AbstractTestNGSpringContextTests {
 
-	@Autowired
-	private ApplicationContext ctx;
+	@Value("${visa.app}")
+	private String visaApp;
 
 	@Value("${browser.name}")
 	private String browserName;
 
-	protected WebDriver browser;
+	@Autowired
+	private ApplicationContext ctx;
+
+	protected WebDriver myBrowser;
+
+	protected VisaPage visaPage;
+	protected VisaRegistrationPage registrationPage;
+	protected VisaConfirmationPage confirmationPage;
 
 	@BeforeClass
 	public void before_each_testClass() {
-        this.browser = BrowserFactory.launch(this.browserName, this.ctx);
+		myBrowser = BrowserFactory.launch(this.browserName, this.ctx);
+		visaPage = new VisaPage(myBrowser);
 	}
 
 	@AfterClass
 	public void after_each_testClass() {
-        this.browser.quit();
+		myBrowser.quit();
 	}
 
 }

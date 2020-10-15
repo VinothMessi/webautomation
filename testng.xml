@@ -1,52 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Suite1" verbose="1" parallel="tests" thread-count="5">
+<suite name="Regression Test Suite">
 
-  <test name="Business flow 01">
-
-    <classes>
-
-      <class name="com.nextgen.webautomation.testcases.Sanity1" />
-
-    </classes>
-
-  </test>
-
-  <test name="Business flow 02">
+  <test name="Testing Visa Application">
 
     <classes>
 
-      <class name="com.nextgen.webautomation.testcases.Sanity2" />
-
-    </classes>
-
-  </test>
-
-  <test name="Business flow 03">
-
-    <classes>
-
-      <class name="com.nextgen.webautomation.testcases.Sanity3" />
-
-    </classes>
-
-  </test>
-
-  <test name="Business flow 04">
-
-    <classes>
-
-      <class name="com.nextgen.webautomation.testcases.Sanity4" />
-
-    </classes>
-
-  </test>
-
-  <test name="Business flow 05">
-
-    <classes>
-
-      <class name="com.nextgen.webautomation.testcases.Sanity5" />
+      <class name="com.nextgen.webautomation.testcases.VisaApp" />
 
     </classes>
 
