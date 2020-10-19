@@ -14,12 +14,18 @@ import org.openqa.selenium.support.ui.Select;
 
 public interface MyActions {
 
-    BiFunction<WebDriver, By, WebElement> find = WebDriver::findElement;
+	Consumer<String> print = System.out::println;
+
+	Consumer<WebDriver> quit = WebDriver::quit;
+	Consumer<WebDriver> close = WebDriver::close;
+	Consumer<WebElement> clearOut = WebElement::clear;
+	Consumer<WebElement> clickOn = WebElement::click;
+
+	BiFunction<WebDriver, By, WebElement> find = WebDriver::findElement;
 	BiFunction<WebDriver, By, List<WebElement>> findAll = WebDriver::findElements;
 	BiConsumer<WebDriver, String> get = WebDriver::get;
 	Function<WebDriver, String> getTitle = WebDriver::getTitle;
 
-	Consumer<WebElement> clickOn = WebElement::click;
 	BiConsumer<WebElement, String> type = WebElement::sendKeys;
 	Function<WebElement, String> getText = WebElement::getText;
 
@@ -30,7 +36,6 @@ public interface MyActions {
 	Function<WebElement, Select> dropDown = e -> new Select(e);
 	BiConsumer<String, WebElement> selectText = (s, e) -> dropDown.apply(e).selectByVisibleText(s);
 	BiConsumer<String, WebElement> selectValue = (s, e) -> dropDown.apply(e).selectByValue(s);
-	BiConsumer<String, WebElement> selectIndex = (s, e) -> dropDown.apply(e)
-			.selectByIndex(Integer.parseInt(s));
+	BiConsumer<String, WebElement> selectIndex = (s, e) -> dropDown.apply(e).selectByIndex(Integer.parseInt(s));
 
 }
