@@ -1,7 +1,6 @@
 package com.nextgen.webautomation.visaapppages;
 
 import java.util.concurrent.TimeUnit;
-import java.util.function.BiConsumer;
 
 import com.nextgen.webautomation.basepage.BasePage;
 

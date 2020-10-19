@@ -1,6 +1,5 @@
 package com.nextgen.webautomation.testcases;
 
-import com.nextgen.webautomation.actions.MyActions;
 import com.nextgen.webautomation.base.TestBase;
 import com.nextgen.webautomation.workflows.VisaRegistrationWorkFlow;
 
