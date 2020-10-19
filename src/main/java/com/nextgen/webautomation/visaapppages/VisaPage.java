@@ -1,6 +1,7 @@
 package com.nextgen.webautomation.visaapppages;
 
 import java.util.concurrent.TimeUnit;
+import java.util.function.BiConsumer;
 
 import com.nextgen.webautomation.basepage.BasePage;
 
@@ -34,7 +35,7 @@ public class VisaPage extends BasePage {
 	@Override
 	public void waitTillPageLoads() {
 		Awaitility.await("Wait till Registration form is displayed").atMost(10, TimeUnit.SECONDS)
-				.until(() -> isDisplayed.apply(form).equals(true));
+				.until(() -> isDisplayed.test(form));
 	}
 
 }
