@@ -52,7 +52,7 @@ public class VisaRegistrationPage extends BasePage {
 	@FindBy(id = "input_27_area")
 	private WebElement areaCode;
 
-	@FindBy(id = "input_27_area")
+	@FindBy(id = "input_27_phone")
 	private WebElement phoneNumber;
 
 	@FindBy(id = "input_45")

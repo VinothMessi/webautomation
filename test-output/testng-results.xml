@@ -2,54 +2,61 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-18T22:32:23 IST" name="Default suite" finished-at="2020-10-18T22:32:34 IST" duration-ms="11137">
+  <suite started-at="2020-10-19T18:48:33 IST" name="Default suite" finished-at="2020-10-19T18:48:45 IST" duration-ms="12526">
     <groups>
     </groups>
-    <test started-at="2020-10-18T22:32:23 IST" name="Default test" finished-at="2020-10-18T22:32:34 IST" duration-ms="11137">
+    <test started-at="2020-10-19T18:48:33 IST" name="Default test" finished-at="2020-10-19T18:48:45 IST" duration-ms="12526">
       <class name="com.nextgen.webautomation.testcases.VisaRegistrationTesting">
-        <test-method is-config="true" signature="springTestContextBeforeTestClass()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@5a7005d]" started-at="2020-10-18T22:32:23 IST" name="springTestContextBeforeTestClass" finished-at="2020-10-18T22:32:23 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="springTestContextBeforeTestClass()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@45efc20d]" started-at="2020-10-19T18:48:33 IST" name="springTestContextBeforeTestClass" finished-at="2020-10-19T18:48:33 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextBeforeTestClass -->
-        <test-method is-config="true" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@5a7005d]" started-at="2020-10-18T22:32:23 IST" name="springTestContextPrepareTestInstance" finished-at="2020-10-18T22:32:23 IST" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" duration-ms="838" status="PASS">
+        <test-method is-config="true" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@45efc20d]" started-at="2020-10-19T18:48:33 IST" name="springTestContextPrepareTestInstance" finished-at="2020-10-19T18:48:35 IST" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" duration-ms="2833" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextPrepareTestInstance -->
-        <test-method is-config="true" signature="before_each_testClass()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@5a7005d]" started-at="2020-10-18T22:32:23 IST" name="before_each_testClass" finished-at="2020-10-18T22:32:25 IST" duration-ms="1736" status="PASS">
+        <test-method is-config="true" signature="before_each_testClass()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@45efc20d]" started-at="2020-10-19T18:48:35 IST" name="before_each_testClass" finished-at="2020-10-19T18:48:37 IST" duration-ms="1810" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before_each_testClass -->
-        <test-method is-config="true" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@5a7005d]" started-at="2020-10-18T22:32:25 IST" name="springTestContextBeforeTestMethod" finished-at="2020-10-18T22:32:25 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@45efc20d]" started-at="2020-10-19T18:48:37 IST" name="springTestContextBeforeTestMethod" finished-at="2020-10-19T18:48:37 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.nextgen.webautomation.testcases.VisaRegistrationTesting.visaRegistration()]]>
+                <![CDATA[public void com.nextgen.webautomation.testcases.VisaRegistrationTesting.visaRegistration(com.nextgen.webautomation.entiry.User)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method signature="visaRegistration()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@5a7005d]" started-at="2020-10-18T22:32:25 IST" name="visaRegistration" finished-at="2020-10-18T22:32:33 IST" duration-ms="7765" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- visaRegistration -->
-        <test-method is-config="true" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@5a7005d]" started-at="2020-10-18T22:32:33 IST" name="springTestContextAfterTestMethod" finished-at="2020-10-18T22:32:33 IST" duration-ms="2" status="PASS">
+        <test-method signature="visaRegistration(com.nextgen.webautomation.entiry.User)[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@45efc20d]" started-at="2020-10-19T18:48:37 IST" name="visaRegistration" data-provider="Users" finished-at="2020-10-19T18:48:44 IST" duration-ms="6973" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.nextgen.webautomation.testcases.VisaRegistrationTesting.visaRegistration()]]>
+                <![CDATA[com.nextgen.webautomation.entiry.User@6dbbdf92]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- visaRegistration -->
+        <test-method is-config="true" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@45efc20d]" started-at="2020-10-19T18:48:44 IST" name="springTestContextAfterTestMethod" finished-at="2020-10-19T18:48:44 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.nextgen.webautomation.testcases.VisaRegistrationTesting.visaRegistration(com.nextgen.webautomation.entiry.User)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method is-config="true" signature="after_each_testClass()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@5a7005d]" started-at="2020-10-18T22:32:33 IST" name="after_each_testClass" finished-at="2020-10-18T22:32:34 IST" duration-ms="757" status="PASS">
+        <test-method is-config="true" signature="after_each_testClass()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@45efc20d]" started-at="2020-10-19T18:48:44 IST" name="after_each_testClass" finished-at="2020-10-19T18:48:45 IST" duration-ms="697" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after_each_testClass -->
-        <test-method is-config="true" signature="springTestContextAfterTestClass()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@5a7005d]" started-at="2020-10-18T22:32:34 IST" name="springTestContextAfterTestClass" finished-at="2020-10-18T22:32:34 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="springTestContextAfterTestClass()[pri:0, instance:com.nextgen.webautomation.testcases.VisaRegistrationTesting@45efc20d]" started-at="2020-10-19T18:48:45 IST" name="springTestContextAfterTestClass" finished-at="2020-10-19T18:48:45 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestClass -->
