@@ -1,0 +1,4 @@
+id,first_name,last_name,address,user_email,phone_number,gender,hobby,skill,country,birth_year,birth_month,birth_day,password
+1,Lionel,Messi,Sample address,test21@gmail.com,1111111223,male,cricket,APIs,Australia,2001,January,11,Liverpool123!@
+2,Sadio,Mane,Sample address,test22@gmail.com,1111111224,female,movies,Android,Austria,2002,February,12,Liverpool123!@
+3,Mo,Salah,Sample address,test23@gmail.com,1111111225,male,hockey,Analytics,Azerbaijan,2003,March,13,Liverpool123!@

@@ -12,4 +12,14 @@
 
   </test>
 
+  <test name="Testing Demo Application">
+
+    <classes>
+
+      <class name="com.nextgen.webautomation.testcases.DemoRegistrationTesting" />
+
+    </classes>
+
+  </test>
+
 </suite>

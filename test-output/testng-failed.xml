@@ -7,7 +7,7 @@
         <methods>
           <include name="springTestContextBeforeTestClass"/>
           <include name="before_each_testClass"/>
-          <include name="demoRegistration"/>
+          <include name="demoRegistration" invocation-numbers="0"/>
           <include name="springTestContextPrepareTestInstance"/>
           <include name="springTestContextAfterTestClass"/>
           <include name="after_each_testClass"/>
