@@ -14,9 +14,6 @@ import org.testng.annotations.BeforeClass;
 @SpringBootTest
 public class TestBase extends AbstractTestNGSpringContextTests {
 
-	@Value("${visa.app}")
-	private String visaApp;
-
 	@Value("${browser.name}")
 	private String browserName;
 

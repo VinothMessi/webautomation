@@ -23,7 +23,7 @@ public class VisaRegistrationTesting extends TestBase {
 	@Autowired
 	private UserRepository repository;
 
-	@Test(dataProvider = "Users")
+	@Test(dataProvider = "VisaRegistration")
 	public void visaRegistration(User u) {
 		VisaRegistrationWorkFlow.visaPage((p) -> {
 			p.goTo(this.visaApp);
@@ -45,7 +45,7 @@ public class VisaRegistrationTesting extends TestBase {
 		}, myBrowser);
 	}
 
-	@DataProvider(name = "Users")
+	@DataProvider(name = "VisaRegistration")
 	private Object[] getData() {
 		return this.repository.findAll().toArray();
 	}

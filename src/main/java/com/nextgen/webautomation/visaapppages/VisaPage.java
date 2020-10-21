@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.nextgen.webautomation.basepage.BasePage;
 
-import org.awaitility.Awaitility;
+import static org.awaitility.Awaitility.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,7 +33,7 @@ public class VisaPage extends BasePage {
 
 	@Override
 	public void waitTillPageLoads() {
-		Awaitility.await("Wait till Registration form is displayed").atMost(10, TimeUnit.SECONDS)
+		await("Wait till Registration form is displayed").atMost(10, TimeUnit.SECONDS)
 				.until(() -> isDisplayed.test(form));
 	}
 

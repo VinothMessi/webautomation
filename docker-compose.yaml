@@ -18,7 +18,7 @@ services:
     networks:
       - my_network
     deploy:
-      replicas: 5
+      replicas: 2
 
   firefox:
     image: selenium/node-firefox
@@ -30,7 +30,7 @@ services:
     networks:
       - my_network
     deploy:
-      replicas: 5
+      replicas: 2
 
 networks:
   my_network:

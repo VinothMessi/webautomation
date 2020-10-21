@@ -17,14 +17,14 @@ public class VisaRegistrationWorkFlow {
         return new VisaRegistrationWorkFlow();
     }
 
-    // This is static to give an entry point
+
     public VisaRegistrationWorkFlow visaRegistrationPage(Consumer<VisaRegistrationPage> c, WebDriver driver) {
         VisaRegistrationPage p = new VisaRegistrationPage(driver);
         c.accept(p);
         return new VisaRegistrationWorkFlow();
     }
 
-    // This is static to give an entry point
+
     public void visaConfirmationPage(Consumer<VisaConfirmationPage> c, WebDriver driver) {
         VisaConfirmationPage p = new VisaConfirmationPage(driver);
         c.accept(p);
