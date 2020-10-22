@@ -22,8 +22,9 @@ public class VisaConfirmationPage extends BasePage {
     }
 
     @Override
-    public void waitTillPageLoads() {
+    public VisaConfirmationPage waitTillPageLoads() {
         await().atMost(10, TimeUnit.SECONDS).until(() -> !getText.apply(this.requestNumber).isEmpty());
+        return this;
     }
 
     public String getConfirmationMessage() {

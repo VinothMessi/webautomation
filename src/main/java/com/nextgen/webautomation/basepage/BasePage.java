@@ -18,6 +18,6 @@ public abstract class BasePage implements MyActions {
 		PageFactory.initElements(myDriver, this);
 	}
 
-	protected abstract void waitTillPageLoads();
+	protected abstract BasePage waitTillPageLoads();
 
 }

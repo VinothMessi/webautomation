@@ -18,23 +18,24 @@ public class VisaPage extends BasePage {
 		super(driver);
 	}
 
-	public void goTo(String url) {
+	public VisaPage goTo(String url) {
 		get.accept(myDriver, url);
+		return this;
 	}
 
 	public String getPageTitle() {
 		return getTitle.apply(myDriver);
 	}
 
-	public VisaRegistrationPage startRegistration() {
+	public void startRegistration() {
 		clickOn.accept(this.form);
-		return new VisaRegistrationPage(myDriver);
 	}
 
 	@Override
-	public void waitTillPageLoads() {
+	public VisaPage waitTillPageLoads() {
 		await("Wait till Registration form is displayed").atMost(10, TimeUnit.SECONDS)
 				.until(() -> isDisplayed.test(form));
+		return this;
 	}
 
 }

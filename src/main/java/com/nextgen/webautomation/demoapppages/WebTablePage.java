@@ -20,9 +20,10 @@ public class WebTablePage extends BasePage {
 	}
 
 	@Override
-	public void waitTillPageLoads() {
+	public WebTablePage waitTillPageLoads() {
 		await("Wait till page title is not empty").atMost(20, TimeUnit.SECONDS)
 				.until(() -> getTitle.apply(myDriver).contains("Table"));
+		return this;
 	}
 
 	public String getPageTitle() {

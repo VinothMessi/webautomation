@@ -32,30 +32,22 @@ public class DemoRegistrationTesting extends TestBase {
 	@Test(dataProvider = "DemoUserRegistration")
 	public void demoRegistration(Demo u) {
 		DemoRegistrationWorkFlow.loginPage((p) -> {
-			p.goTo(this.demoApp);
-			p.waitTillPageLoads();
+			p.goTo(this.demoApp).waitTillPageLoads().getElementValidators().stream().parallel().map(ev -> ev.validate())
+					.forEach(b -> assertThat(b));
 			assertThat(p.getPageTitle()).matches(title -> title.equals(this.loginPageTitle), "Verifying Page Title");
-			p.getElementValidators().stream().parallel().map(ev -> ev.validate()).forEach(b -> assertThat(b));
 			p.logIn(this.userName);
 		}, myBrowser).registrationPage((p) -> {
-			p.waitTillPageLoads();
-			p.getUserDetails().getElementValidators();
-			p.getUserDetails().fillUserDetails(u.getFirstName(), u.getLastName(), u.getAddress());
-			p.getContactDetails().getElementValidators();
-			p.getContactDetails().fillContactDetails(u.getEmail(), u.getPhoneNumber());
-			p.getGenderDetails().getElementValidators();
-			p.getGenderDetails().fillGenderDetails(u.getGender());
-			p.getHobbyDetails().getElementValidators();
-			p.getHobbyDetails().fillHobby(u.getHobby());
-			p.getOtherDetails().getElementValidators();
-			p.getOtherDetails().fillOtherDetails(u.getSkill(), u.getCountry());
-			p.getBirthDetails().getElementValidators();
-			p.getBirthDetails().fillBirthDetails(u.getBirthYear(), u.getBirthMonth(), u.getBirthDay());
+			p.waitTillPageLoads().inUserDetails().enter(u.getFirstName(), u.getLastName(), u.getAddress());
+			p.inContactDetails().fill(u.getEmail(), u.getPhoneNumber());
+			p.inGenderDetails().chooseGender(u.getGender());
+			p.inHobbyDetails().chooseHobby(u.getHobby());
+			p.inOtherDetails().select(u.getSkill(), u.getCountry());
+			p.inBirthDetails().choose(u.getBirthYear(), u.getBirthMonth(), u.getBirthDay());
 			p.setPasswords(u.getPassword(), u.getPassword());
 			p.submit();
 		}, myBrowser).webTablePage((p) -> {
-			p.waitTillPageLoads();
-			assertThat(p.getPageTitle()).matches(title -> title.equals(this.webTablePageTitle), "Verifying Page Title");
+			assertThat(p.waitTillPageLoads().getPageTitle()).matches(title -> title.equals(this.webTablePageTitle),
+					"Verifying Page Title");
 		}, myBrowser);
 	}
 

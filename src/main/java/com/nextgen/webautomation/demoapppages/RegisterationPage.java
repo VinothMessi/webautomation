@@ -45,11 +45,12 @@ public class RegisterationPage extends BasePage {
     }
 
     @Override
-    public void waitTillPageLoads() {
+    public RegisterationPage waitTillPageLoads() {
         await("Wait till enter option is displayed and enabled").atMost(10, TimeUnit.SECONDS)
                 .until(() -> isDisplayed.and(isEnabled).test(this.photoUpload));
+        return this;
     }
-
+    
     public void setPasswords(String passwd, String conPasswd) {
         type.accept(this.password, passwd);
         type.accept(this.confirmPassword, conPasswd);
@@ -59,7 +60,7 @@ public class RegisterationPage extends BasePage {
         clickOn.accept(this.submit);
     }
 
-    public UserDetails getUserDetails() {
+    public UserDetails inUserDetails() {
         return userDetails;
     }
 
@@ -67,7 +68,7 @@ public class RegisterationPage extends BasePage {
         this.userDetails = userDetails;
     }
 
-    public ContactDetails getContactDetails() {
+    public ContactDetails inContactDetails() {
         return contactDetails;
     }
 
@@ -75,7 +76,7 @@ public class RegisterationPage extends BasePage {
         this.contactDetails = contactDetails;
     }
 
-    public GenderDetails getGenderDetails() {
+    public GenderDetails inGenderDetails() {
         return genderDetails;
     }
 
@@ -83,7 +84,7 @@ public class RegisterationPage extends BasePage {
         this.genderDetails = genderDetails;
     }
 
-    public HobbyDetails getHobbyDetails() {
+    public HobbyDetails inHobbyDetails() {
         return hobbyDetails;
     }
 
@@ -91,7 +92,7 @@ public class RegisterationPage extends BasePage {
         this.hobbyDetails = hobbyDetails;
     }
 
-    public OtherDetails getOtherDetails() {
+    public OtherDetails inOtherDetails() {
         return otherDetails;
     }
 
@@ -99,7 +100,7 @@ public class RegisterationPage extends BasePage {
         this.otherDetails = otherDetails;
     }
 
-    public BirthDetails getBirthDetails() {
+    public BirthDetails inBirthDetails() {
         return birthDetails;
     }
 

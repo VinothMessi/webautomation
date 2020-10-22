@@ -1,12 +1,9 @@
 package com.nextgen.webautomation.demoapppages;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import com.nextgen.webautomation.actions.MyActions;
-import com.nextgen.webautomation.validator.ElementValidator;
-import com.nextgen.webautomation.validator.Validator;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,12 +33,7 @@ public class OtherDetails implements MyActions {
 		PageFactory.initElements(driver, this);
 	}
 
-	public List<Validator> getElementValidators() {
-		return Arrays.asList(new ElementValidator(this.language), new ElementValidator(this.skills),
-				new ElementValidator(this.country), new ElementValidator(this.selectCountry));
-	}
-
-	public void fillOtherDetails(String skill, String country) {
+	public void select(String skill, String country) {
 		await().atMost(10, TimeUnit.SECONDS).until(() -> isDisplayed.and(isEnabled).test(this.skills));
 		selectText.accept(skill, this.skills);
 		selectText.accept(country, this.country);

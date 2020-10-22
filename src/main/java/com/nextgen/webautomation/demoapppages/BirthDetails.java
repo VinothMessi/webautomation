@@ -1,11 +1,6 @@
 package com.nextgen.webautomation.demoapppages;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.nextgen.webautomation.actions.MyActions;
-import com.nextgen.webautomation.validator.ElementValidator;
-import com.nextgen.webautomation.validator.Validator;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,12 +22,7 @@ public class BirthDetails implements MyActions {
         PageFactory.initElements(driver, this);
     }
 
-    public List<Validator> getElementValidators() {
-        return Arrays.asList(new ElementValidator(this.yearOfBirth), new ElementValidator(this.monthOfBirth),
-                new ElementValidator(this.dayOfBirth));
-    }
-
-    public void fillBirthDetails(String year, String month, String day) {
+    public void choose(String year, String month, String day) {
         selectText.accept(year, this.yearOfBirth);
         selectText.accept(month, this.monthOfBirth);
         selectText.accept(day, this.dayOfBirth);

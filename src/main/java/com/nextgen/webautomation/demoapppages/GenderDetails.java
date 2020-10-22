@@ -1,11 +1,8 @@
 package com.nextgen.webautomation.demoapppages;
 
-import java.util.Arrays;
 import java.util.List;
 
 import com.nextgen.webautomation.actions.MyActions;
-import com.nextgen.webautomation.validator.ElementValidator;
-import com.nextgen.webautomation.validator.Validator;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +10,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class GenderDetails implements MyActions {
+
+    @FindBy(xpath = "//label[text()='Gender*']/following::div[1]/label")
+    private List<WebElement> genders;
 
     @FindBy(xpath = "//input[@value='Male']")
     private WebElement male;
@@ -24,16 +24,8 @@ public class GenderDetails implements MyActions {
         PageFactory.initElements(driver, this);
     }
 
-    public List<Validator> getElementValidators() {
-        return Arrays.asList(new ElementValidator(this.male), new ElementValidator(this.female));
-    };
-
-    public void fillGenderDetails(String gender) {
-        if (gender.equals("male")) {
-            clickOn.accept(this.male);
-        } else {
-            clickOn.accept(this.female);
-        }
+    public void chooseGender(String gender) {
+        this.genders.stream().filter(e -> e.getText().trim().equals(gender)).forEach(e -> e.click());
     }
 
 }

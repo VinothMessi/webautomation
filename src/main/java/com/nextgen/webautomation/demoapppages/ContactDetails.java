@@ -1,11 +1,6 @@
 package com.nextgen.webautomation.demoapppages;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.nextgen.webautomation.actions.MyActions;
-import com.nextgen.webautomation.validator.ElementValidator;
-import com.nextgen.webautomation.validator.Validator;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,11 +19,7 @@ public class ContactDetails implements MyActions {
         PageFactory.initElements(driver, this);
     }
 
-    public List<Validator> getElementValidators() {
-        return Arrays.asList(new ElementValidator(this.email), new ElementValidator(this.phone));
-    };
-
-    public void fillContactDetails(String mail, String ph) {
+    public void fill(String mail, String ph) {
         type.accept(this.email, mail);
         type.accept(this.phone, ph);
     }

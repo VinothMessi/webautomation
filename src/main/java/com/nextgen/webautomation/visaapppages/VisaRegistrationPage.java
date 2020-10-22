@@ -66,40 +66,45 @@ public class VisaRegistrationPage extends BasePage {
 	}
 
 	@Override
-	public void waitTillPageLoads() {
-		await("Wait till Page header and Sub header are displayed").atMost(10, TimeUnit.SECONDS).until(
-				() -> isDisplayed.test(pageHeader) && isDisplayed.test(pageSubHeader));
+	public VisaRegistrationPage waitTillPageLoads() {
+		await("Wait till Page header and Sub header are displayed").atMost(10, TimeUnit.SECONDS)
+				.until(() -> isDisplayed.test(pageHeader) && isDisplayed.test(pageSubHeader));
+		return this;
 	}
 
-	public void enterUserDetails(String fName, String lName) {
+	public VisaRegistrationPage enterUserDetails(String fName, String lName) {
 		type.accept(this.firstName, fName);
 		type.accept(this.lastName, lName);
+		return this;
 	}
 
-	public void enterCountryDetails(String fCountry, String tCountry) {
+	public VisaRegistrationPage enterCountryDetails(String fCountry, String tCountry) {
 		selectText.accept(fCountry, this.fromCountry);
 		selectText.accept(tCountry, this.toCountry);
+		return this;
 	}
 
-	public void enterBirthDetails(String bMonth, String bDay, String bYear) {
+	public VisaRegistrationPage enterBirthDetails(String bMonth, String bDay, String bYear) {
 		selectValue.accept(bMonth, this.birthMonth);
 		selectValue.accept(bDay, this.birthDay);
 		selectValue.accept(bYear, this.birthYear);
+		return this;
 	}
 
-	public void enterContactDetails(String eMail, String aCode, String phNumber) {
+	public VisaRegistrationPage enterContactDetails(String eMail, String aCode, String phNumber) {
 		type.accept(this.userEmail, eMail);
 		type.accept(this.areaCode, aCode);
 		type.accept(this.phoneNumber, phNumber);
+		return this;
 	}
 
-	public void enterComments(String comments) {
+	public VisaRegistrationPage enterComments(String comments) {
 		type.accept(this.adComments, comments);
+		return this;
 	}
 
-	public VisaConfirmationPage submitVisaForm() {
+	public void submitVisaForm() {
 		clickOn.accept(this.submit);
-		return new VisaConfirmationPage(myDriver);
 	}
 
 	public List<Validator> getElementValidators() {

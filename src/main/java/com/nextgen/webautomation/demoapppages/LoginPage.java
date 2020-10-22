@@ -35,8 +35,9 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void goTo(String url) {
+    public LoginPage goTo(String url) {
         get.accept(myDriver, url);
+        return this;
     }
 
     public String getPageTitle() {
@@ -44,9 +45,10 @@ public class LoginPage extends BasePage {
     }
 
     @Override
-    public void waitTillPageLoads() {
+    public LoginPage waitTillPageLoads() {
         await("Wait till enter option is displayed and enabled").atMost(10, TimeUnit.SECONDS)
                 .until(() -> isDisplayed.and(isEnabled).test(enter));
+        return this;
     }
 
     public List<Validator> getElementValidators() {

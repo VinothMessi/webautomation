@@ -26,22 +26,19 @@ public class VisaRegistrationTesting extends TestBase {
 	@Test(dataProvider = "VisaRegistration")
 	public void visaRegistration(User u) {
 		VisaRegistrationWorkFlow.visaPage((p) -> {
-			p.goTo(this.visaApp);
-			p.waitTillPageLoads();
+			p.goTo(this.visaApp).waitTillPageLoads();
 			assertThat(p.getPageTitle()).matches((title) -> title.equals(this.pageTitle), "Page Title validation");
 			p.startRegistration();
 		}, myBrowser).visaRegistrationPage((p) -> {
-			p.waitTillPageLoads();
-			p.getElementValidators().stream().parallel().map(ev -> ev.validate()).forEach(b -> assertThat(b));
-			p.enterUserDetails(u.getFirstName(), u.getLastName());
-			p.enterCountryDetails(u.getFromCountry(), u.getToCountry());
-			p.enterBirthDetails(u.getBirthMonth(), u.getBirthDay(), u.getBirthYear());
-			p.enterContactDetails(u.getEmail(), u.getAreaCode(), u.getPhoneNumber());
-			p.enterComments(u.getComments());
-			p.submitVisaForm();
+			p.waitTillPageLoads().getElementValidators().stream().parallel().map(ev -> ev.validate())
+					.forEach(b -> assertThat(b));
+			p.enterUserDetails(u.getFirstName(), u.getLastName())
+					.enterCountryDetails(u.getFromCountry(), u.getToCountry())
+					.enterBirthDetails(u.getBirthMonth(), u.getBirthDay(), u.getBirthYear())
+					.enterContactDetails(u.getEmail(), u.getAreaCode(), u.getPhoneNumber())
+					.enterComments(u.getComments()).submitVisaForm();
 		}, myBrowser).visaConfirmationPage((p) -> {
-			p.waitTillPageLoads();
-			System.out.println(p.getConfirmationMessage());
+			System.out.println(p.waitTillPageLoads().getConfirmationMessage());
 		}, myBrowser);
 	}
 
