@@ -31,7 +31,6 @@ public class HobbyDetails implements MyActions {
     public void chooseHobby(String hobby) {
         this.hobbies.stream()
         .filter(e -> e.findElement(By.tagName("input")).getAttribute("value").trim().equals(hobby))
-        .map(e -> e.findElement(By.tagName("input")))
         .forEach(e -> e.click());
     }
 

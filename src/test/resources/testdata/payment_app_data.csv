@@ -1,0 +1,4 @@
+id,first_name,last_name,user_email,cc_bank,year_account,pin
+1,Lionel,Messi,test01@gmail.com,1231231231,2023,123
+2,Sadio,Mane,test02@gmail.com,WELLS FARGO,myaccount123,999
+3,Mo,Salah,test03@gmail.com,2342342341,2024,456

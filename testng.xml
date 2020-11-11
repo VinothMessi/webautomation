@@ -2,24 +2,37 @@
 
 <suite name="Regression Test Suite">
 
-  <test name="Testing Visa Application">
+	<test name="Testing Visa Application">
 
-    <classes>
+		<classes>
 
-      <class name="com.nextgen.webautomation.testcases.VisaRegistrationTesting" />
+			<class
+				name="com.nextgen.webautomation.testcases.VisaRegistrationTesting" />
 
-    </classes>
+		</classes>
 
-  </test>
+	</test>
 
-  <test name="Testing Demo Application">
+	<test name="Testing Demo Application">
 
-    <classes>
+		<classes>
 
-      <class name="com.nextgen.webautomation.testcases.DemoRegistrationTesting" />
+			<class
+				name="com.nextgen.webautomation.testcases.DemoRegistrationTesting" />
 
-    </classes>
+		</classes>
 
-  </test>
+	</test>
+
+	<test name="Testing Payment Application">
+
+		<classes>
+
+			<class
+				name="com.nextgen.webautomation.testcases.PaymentScreenTesting" />
+
+		</classes>
+
+	</test>
 
 </suite>

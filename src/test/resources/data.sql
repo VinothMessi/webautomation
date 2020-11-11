@@ -3,3 +3,6 @@ CREATE TABLE user AS SELECT * FROM CSVREAD('classpath:testdata/visa_app_data.csv
 
 DROP TABLE IF EXISTS demo;
 CREATE TABLE demo AS SELECT * FROM CSVREAD('classpath:testdata/demo_app_data.csv');
+
+DROP TABLE IF EXISTS payment;
+CREATE TABLE payment AS SELECT * FROM CSVREAD('classpath:testdata/payment_app_data.csv');
